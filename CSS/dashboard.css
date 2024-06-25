@@ -1,0 +1,144 @@
+.styled-input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  transition: border-color 0.3s ease;
+}
+
+.styled-input:focus {
+  border-color: #007bff;
+  outline: none; /* Remove default focus outline */
+}
+.former{
+  display: flex;
+  flex-direction: column;
+  column-gap: 10%;
+  align-items: center;
+  margin-top: 20vh;
+  background-color: white;
+  width: 60vh;
+  border-radius: 10px;
+  margin-left: 75vh;
+
+}
+.former input{
+  width: 40vh;
+  padding: 10px;
+}
+.former button{
+  padding: 10px;
+  width: 10vh;
+}
+.styled-button {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  padding: 10px 20px; /* Padding around text */
+  font-size: 16px; /* Font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth color transition */
+  width: 15vh;
+}
+
+.styled-button:hover {
+  background-color: #0056b3; /* Darker background color on hover */
+}
+
+.styled-input {
+padding: 10px;
+border: 2px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+width: 200px;
+transition: border-color 0.3s ease;
+}
+
+.styled-input:focus {
+border-color: #007bff;
+outline: none; /* Remove default focus outline */
+}
+.former{
+display: flex;
+flex-direction: column;
+column-gap: 10%;
+align-items: center;
+margin-top: 20vh;
+background-color: white;
+width: 60vh;
+border-radius: 10px;
+margin-left: 75vh;
+padding: 20px;
+
+}
+.former input{
+width: 40vh;
+padding: 10px;
+}
+.former button{
+padding: 10px;
+width: 10vh;
+}
+.styled-button {
+background-color: #007bff; /* Button background color */
+color: #fff; /* Text color */
+border: none; /* No border */
+padding: 10px 20px; /* Padding around text */
+font-size: 16px; /* Font size */
+border-radius: 5px; /* Rounded corners */
+cursor: pointer; /* Cursor on hover */
+transition: background-color 0.3s ease; /* Smooth color transition */
+width: 15vh;
+}
+
+.styled-button:hover {
+background-color: #0056b3; /* Darker background color on hover */
+}
+
+.footer-container {
+background-color: rgb(32, 32, 32);
+padding: 50px;
+margin-top: 80px;
+border-radius: 20px 20px 0px 0px;
+}
+
+.footer-container .footer-align .footer-logo img {
+width: 100px;
+}
+
+.footer-container .footer-align {
+display: flex;
+gap: 10%;
+margin-left: 12vh;
+}
+
+.footer-container .footer-align .social-media i {
+font-size: 30px;
+color: white;
+letter-spacing: 10px;
+}
+.footer-container .footer-alig .footer-logo p
+{
+display: flex;
+}
+.footer-container .footer-align .social-media img {
+width: 150px;
+}
+
+ol {
+list-style: none;
+line-height: 35px;
+color: white;
+}
+.food-chef-img .food-chef .food-foto img:hover
+{
+transform: scale(1.2);
+transition: 0.5s;
+border-radius: 2px solid white;
+}
+.food-container .food-sm .food-contant{
+transform: scale(1.2);
+transition: 0.5s;
+}

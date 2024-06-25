@@ -1,0 +1,19 @@
+{
+  "name": "food-ordering",
+  "version": "1.0.0",
+  "description": "A foodordering website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "choco": "^0.2.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1",
+    "nodemon": "^3.1.0",
+    "razorpay": "^2.9.2"
+  }
+}

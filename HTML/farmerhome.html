@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.104.2">
+  <title>Farmer Home</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link href="farmerhom.css" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-dark bg-dark" aria-label="Dark offcanvas navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Harvest Hub</a>
+      <div class="photo">
+        <img src="#" alt="">
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarDark"
+        aria-controls="offcanvasNavbarDark">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbarDark"
+        aria-labelledby="offcanvasNavbarDarkLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">Government</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/displayprofile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/getdoctor">Cattle Doctor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Product Quality Check</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/getfertile">Fertilizer</a>
+            </li>
+          
+          </ul>
+        </div>
+      </div>
+  </nav>
+
+  <!--carousel-->
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="container-main">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="Government-Schemes.jpg" class="d-block w-10" alt="..."
+            style="margin-left: 10vh; width: 90%; border-radius: 20px;">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="slide2.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="slide3.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <marquee behavior="" direction="" style="cursor: pointer;color:white;">Market Price Average -> Tomato
+    :$5&nbsp;&nbsp;&nbsp;&nbsp;Potato :$4 &nbsp;&nbsp;&nbsp;&nbsp;Rice :$10 &nbsp;&nbsp;&nbsp;&nbsp;Wheat
+    :$7&nbsp;&nbsp;&nbsp;&nbsp; Pumpkin :$3 </marquee>
+
+  <div class="button-add">
+    <button class="styled-input" onclick="add()">Add</button>
+  </div>
+
+  <section id="formal" style="display: none;">
+    <form class="former" id="form" onsubmit="validate(event)">
+      <label for="">Name</label>
+      <input type="text" class="styled-input" placeholder="Enter your Name" id="name" name="name" required>
+      <span id="changename" style="color: red;font-size: 15px;"></span>
+      <br>
+      <label for="">Product Name</label>
+      <input type="text" class="styled-input" placeholder="Enter your Product Name" id="pname" name="p_name" required>
+      <span id="changeproduct" style="color: red;font-size: 15px;"></span>
+      <br>
+      <label for="">Plantation Date :</label>
+      <input type="date" class="styled-input" id="pdate" name="plant_date" required>
+      <span id="pdatechange"></span>
+      <br>
+      <label for="">Maturity Date :</label>
+      <input type="date" class="styled-input" id="mdate" name="maturity_date" required>
+      <span id="mdatechange"></span>
+      <br>
+      <label for="">Basic Bit Price</label>
+      <input type="number" class="styled-input" placeholder="Enter Price" name="bit_price" id="price" required>
+      <span id="pricechange" style="color: red;font-size: 15px;"></span>
+      <br>
+      <button type="submit" class="styled-button">Update</button>
+    </form>
+  </section>
+
+  <div id="product-container">
+    <!-- Product cards will be appended here -->
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-align">
+      <div class="footer-logo">
+        <h1 style="color: white;">Harvest Hub</h1>
+        <p style="color: white;">Book Your trip in minute, get full <br>
+          control for much longer.</p>
+      </div>
+
+      <div class="company">
+        <h3 style="color: white;">Company</h3>
+        <ol>
+          <li>About</li>
+          <li>Careers</li>
+          <li>Mobile</li>
+        </ol>
+      </div>
+
+      <div class="Contact">
+        <h3 style="color: white;">Contact</h3>
+        <ol>
+          <li>Help/FAQ</li>
+          <li>Press</li>
+          <li>Affiliates</li>
+        </ol>
+      </div>
+
+      <div class="More">
+        <h3 style="color: white;">More</h3>
+        <ol>
+          <li>Airlinefees</li>
+          <li>Airline</li>
+          <li>Low fare tips</li>
+        </ol>
+      </div>
+
+      <div class="social-media">
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+        <i class="fa-brands fa-square-twitter"></i>
+        <br>
+        <h4 style="color: white;"><br>Discover our app</h4>
+        <br>
+        <img src="download-play-app.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script>
+    function add() {
+      document.querySelector('#formal').style.display = 'block';
+    }
+
+    async function validate(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const pname = document.getElementById('pname').value;
+      const pdate = document.getElementById('pdate').value;
+      const mdate = document.getElementById('mdate').value;
+      const price = document.getElementById('price').value;
+      const imageUrl = document.querySelector('img').src;
+      console.log(imageUrl);
+      if (name === "") {
+        document.getElementById('changename').innerHTML = "Enter Something";
+      } else if (/\d/.test(name)) {
+        document.getElementById('changename').innerHTML = "Invalid username";
+      }
+      if (pname === "") {
+        document.getElementById('changeproduct').innerHTML = "Enter Something";
+      } else if (/\d/.test(pname)) {
+        document.getElementById('changeproduct').innerHTML = "Invalid username";
+      }
+      if (price === "") {
+        document.getElementById('pricechange').innerHTML = "Enter something";
+      } else {
+        const newData = {
+          'name': name,
+          'p_name': pname,
+          'plant_date': pdate,
+          'imageUrl': 'https://www.hdwallpapersfreedownload.com/uploads/large/fruits/gorgeous-mix-fresh-fruits-hd.jpg',
+          'maturity_date': mdate,
+          'bid_price': price
+        }
+        console.log(newData);
+        try {
+          const jsonData = JSON.stringify(newData);
+          const response = await fetch('/updatefarmer', {
+            method: "POST",
+            body: jsonData,
+            headers: { "Content-Type": "application/json" }
+          });
+          if (!response.ok) {
+            console.log('Error saving data to database');
+          }
+        } catch (error) {
+          console.log('Error', error);
+        }
+
+        var newProductCard = document.createElement("div");
+        newProductCard.className = "product-card";
+        newProductCard.innerHTML = `
+          <img src="slideone.jpg" alt="Product Image" class="product-image">
+          <div class="product-info">
+              <h2 class="product-title">${pname}</h2>
+              <p>Farmer Name: ${name}</p>
+              <span>Plantation Date: ${pdate}</span>
+              <br>
+              <span>Maturity Date: ${mdate}</span>
+              <br>
+              <span style="color:green">• Organic</span>
+              <p class="product-price">Basic Bit $${price}</p>
+              <button class="delete-button">Delete</button>
+          </div>`;
+        document.getElementById("product-container").appendChild(newProductCard);
+
+        document.querySelector('#formal').style.display = 'none';
+      }
+      var deleteButton = newProductCard.querySelector(".delete-button");
+      deleteButton.addEventListener("click", function () {
+        newProductCard.remove();
+      });
+    }
+  </script>
+
+</body>
+
+</html>

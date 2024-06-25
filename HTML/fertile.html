@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fertile</title>
+</head>
+<style>
+    .product-card {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-container {
+        display: flex;
+        gap: 10%;
+        flex-wrap: wrap;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10%;
+    }
+
+    .product-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .product-info {
+        padding: 20px;
+    }
+
+    .product-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .product-description {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .product-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .add-to-cart-button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-button:hover {
+        background-color: #0056b3;
+    }
+
+    label {
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 8px 12px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #orangic {
+        display: none;
+    }
+
+    #second {
+        display: none;
+    }
+
+    .container {
+        background-color: rgb(255, 178, 178);
+        padding: 40px;
+        border-radius: 10px;
+
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h3>Select</h3>
+        <input type="checkbox" id="checkbox1">
+        <label for="checkbox1">Organic</label><br>
+
+        <input type="checkbox" id="checkbox2">
+        <label for="checkbox2">InOrganic</label><br>
+
+        <button onclick="add()">Buy Product</button>
+        <button onclick="newadd()">Add Product</button>
+    </div>
+    <section id="orangic">
+        <div class="product-container">
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://www.pennington.com/-/media/Project/OneWeb/Pennington/Images/blog/fertilizer/What-is-Organic-Fertilizer/orgainc-soil.jpg"
+                    alt="Product Image" class="product-image">
+                <div class="product-info">
+                    <h2 class="product-title">Product Title</h2>
+                    <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos, illum!</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart-button">Place Order</button>
+                </div>
+            </div>
+
+            <section id="second">
+                <div class="product-container">
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/353/865/original/fertiliizer-vector-icon.jpg"
+                            alt="Product Image" class="product-image">
+                        <div class="product-info">
+                            <h2 class="product-title">Product Title</h2>
+                            <p class="product-description">Product Description Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Quos, illum!</p>
+                            <p class="product-price">$19.99</p>
+                            <button class="add-to-cart-button">Place Order</button>
+                        </div>
+                    </div>
+            </section>
+            <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+            <script>
+                var orangic = document.getElementById('orangic');
+                var second = document.getElementById('second');
+                function add() {
+                    if (document.getElementById("checkbox1").checked) {
+                        orangic.style.display = 'block';
+
+                    }
+                    if (document.getElementById("checkbox2").checked) {
+                        second.style.display = 'block';
+                    }
+
+                }
+
+                // Function to handle successful payment
+                function handlePaymentSuccess(response) {
+                    alert('Payment successful: ' + response.razorpay_payment_id);
+                    sendOrderUpdateRequest();
+                }
+
+                function newadd() {
+                    orangic.style.display = 'none';
+                }
+
+                document.querySelectorAll('.add-to-cart-button').forEach(btn => {
+                    //Initiating payment
+                    btn.addEventListener('click', async () => {
+                        try {
+                            const response = await fetch('/create-order', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    amount: 5000,
+                                    currency: 'INR',
+                                    receipt: 'receipt#1',
+                                    payment_capture: 1
+                                })
+                            });
+                            if (!response.ok) {
+                                throw new Error('Failed to initiate payment');
+                            }
+
+                            const data = await response.json();
+                            const options = {
+                                key: 'rzp_test_4rdgre6savrrmw',
+                                amount: data.amount,
+                                currency: data.currency,
+                                order_id: data.id,
+                                name: 'HarvestHub',
+                                description: 'Purchase Description',
+                                image: 'https://lh3.googleusercontent.com/9-QYzVjyBYT8SJgSlY64SmIBsb3szJlB8fhPaR5rXIrI-lPcm_cgpW8ZgCEdY3HJMHlntaRQ9zxRzIR1Ibu_Sno=w1280',
+                                handler: handlePaymentSuccess,
+                                prefill: {
+                                    name: 'John Doe',
+                                    email: 'john@example.com',
+                                    contact: '9999999999'
+                                },
+                                theme: {
+                                    color: '#cd9225'
+                                }
+                            };
+
+                            const rzp = new Razorpay(options);
+                            rzp.open();
+                        } catch (error) {
+                            console.error('Error initiating payment:', error);
+                        }
+                    });
+                });
+
+            </script>
+</body>
+
+</html>

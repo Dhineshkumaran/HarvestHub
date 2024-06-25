@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <title>My Profile</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/822b82dc31.js" crossorigin="anonymous"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .container-fluid {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile {
+            width: 100vw;
+            height: auto;
+            padding: 30px;
+            color: black;
+            display: flex;
+            border: 2px solid #ccc;
+            /* Add border */
+            border-radius: 10px;
+        }
+
+        .profile .col-lg-6 {
+            flex: 1;
+            /* Equal width columns */
+        }
+
+        .profile img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            /* To remove extra space beneath the image */
+            margin: auto;
+            /* Center the image horizontally */
+        }
+
+        .profile input[type="file"] {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body onload="myFunction()">
+    <div class="container-fluid">
+        <div class="profile">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="https://nypost.com/wp-content/uploads/sites/2/2019/05/crop-farmer.jpg?quality=90&strip=all"
+                        alt="YOUR_IMAGE" width="200px" height="200px">
+                </div>
+                <div class="col-lg-6">
+                    <h5>Name</h5>
+                    <p id="name">Your Name</p>
+                    <h5>User_id</h5>
+                    <p id="user_id"></p>
+                </div>
+                <hr>
+                <div style="padding-left: 70px;">
+                    <div class="container">
+                        <div>
+                            <h5>Upload your Organic certifications</h5>
+                            <input type="file" accept=".pdf">
+                        </div>
+                        <br><br>
+                        <div>
+                            <h5>Upload your Ph+ test certifications</h5>
+                            <input type="file" accept=".pdf">
+                        </div>
+                        <br><br>
+                        <div>
+                            <h5>Cattle Availability and Type</h5>
+                            <div id="formContainer">
+                                <input type="text" id="Cattle" placeholder="Enter cattle">
+                                <input type="text" id="cattleType" placeholder="Enter type of cattle">
+                                <input type="number" id="cattleQuantity" placeholder="Enter quantity">
+                                <button onclick="addCattle()">Add</button>
+                            </div>
+                            <table id="cattleTable">
+                                <thead>
+                                    <tr>
+                                        <th>Cattle</th>
+                                        <th>Type of Cattle</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Cattle rows will be dynamically added here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+</body>
+<script>// Initialize an empty array to store cattle information
+
+    let name = document.getElementById('name');
+    let user_id = document.getElementById('user_id');
+
+    async function myFunction() {
+        try {
+            const response = await fetch('/getprofile');
+            if (!response.ok) {
+                throw new Error("Failed to get profile data");
+            }
+            const data = await response.json();
+            console.log(data);
+            name.innerText = data.username;
+            user_id.innerText = data._id;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const cattleInfo = [];
+
+    function addCattle() {
+        const Cattle = document.getElementById('Cattle').value;
+        const cattleType = document.getElementById('cattleType').value;
+
+        const cattleQuantity = parseInt(document.getElementById('cattleQuantity').value);
+
+        if (cattleType && !isNaN(cattleQuantity)) {
+            // Add cattle information to the array
+            cattleInfo.push({ x: Cattle, type: cattleType, quantity: cattleQuantity });
+
+            // Clear input fields
+            document.getElementById('Cattle').value = '';
+            document.getElementById('cattleType').value = '';
+            document.getElementById('cattleQuantity').value = '';
+
+            // Update the table
+            updateTable();
+        }
+    }
+
+    function updateTable() {
+        const tableBody = document.querySelector('#cattleTable tbody');
+        tableBody.innerHTML = ''; // Clear existing rows
+
+        cattleInfo.forEach(cattle => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${cattle.x}</td>
+                <td>${cattle.type}</td>
+                <td>${cattle.quantity}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
+</script>
+
+</html>
